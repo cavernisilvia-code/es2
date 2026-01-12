@@ -92,7 +92,7 @@ function log_event(array $cfg, string $level, string $message, array $context = 
     $ts = date('c');
     // Serializziamo il contesto in JSON (stringa) per stamparlo a fine riga
     $ctx = $context ? json_encode($context, JSON_UNESCAPED_SLASHES) : '';
-    $line = "[{$ts}] {$level} {$message} {$ctx}\n";
+    $line = "[{$ts}] {$level} {$message} {$cfg["log_format"]} {$ctx}\n";
 
     // Scegliamo dove scrivere il log: file oppure STDERR
     if (($cfg['log_channel'] ?? 'stderr') === 'file') {
