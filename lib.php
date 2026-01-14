@@ -39,7 +39,7 @@ function load_config(string $path): array {
  *
  * Convenzione: il comando è in $argv[1], le opzioni sono in formato --chiave=valore.
  */
-function parse_args(array $argv, bool $strict): array {
+function parse_cli_args(array $argv, bool $strict = false): array {
     // Sintassi:
     // php app.php audit:ping --user=alice --action=login
     // Se non viene passato alcun comando, mostriamo l'help

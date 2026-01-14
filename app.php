@@ -16,7 +16,7 @@ try {
     // 1) Caricamento configurazione
     $cfg = load_config(__DIR__ . '/config.php');
     // 2) Parsing degli argomenti della riga di comando
-    [$cmd, $opts] = parse_args($argv, (bool)$cfg['strict']);
+    [$cmd, $opts] = parse_cli_args($argv, (bool)($cfg['strict'] ?? false));
 
 
     // 3) Comando di aiuto: stampa una mini guida e termina con exit code 0 (successo).
