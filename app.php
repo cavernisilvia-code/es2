@@ -24,7 +24,12 @@ try {
         echo $cfg['app_name'] . " v" . $cfg['version'] . "\n";
         echo "Commands:\n";
         echo "  audit:ping                 healthcheck\n";
+
+        
+        echo "  audit:whoami --user=U    print current user\n";
+
         echo "  audit:log --user=U --action=A --level=L  write an audit log event\n";
+
         exit(0);
     }
 
@@ -34,13 +39,22 @@ try {
         echo "pong\n";
         exit(0);
     }
-
+if ($cmd === 'audit:whoami') {
+        $user = $opts['user'] ?? null;
+        if (!$user){
+        throw new InvalidArgumentException("Missing --user");
+        echo $user . "\n";
+        exit(0);}
+}
+        
+        
 
     // 5) Comando principale: scrive un evento di audit con user e action.
     if ($cmd === 'audit:log') {
         $user = $opts['user'] ?? null;
         $action = $opts['action'] ?? null;
         $level = $opts['level'] ?? 'info';
+        
 
         if (!$user || !$action) {
             throw new InvalidArgumentException("Missing --user or --action");
