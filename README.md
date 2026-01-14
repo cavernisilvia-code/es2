@@ -85,7 +85,8 @@ This repository is intended to be used for:
 - learning basic PHP syntax and execution flow;
 - understanding file inclusion (`require_once`);
 - practicing small, controlled code changes;
-- collaborating via Git (branches, merges, conflict resolution).
+- collaborating via Git (branches, merges, conflict resolution);
+- experimenting with audit logging.
 
 It is well suited for beginner courses and workshops.
 

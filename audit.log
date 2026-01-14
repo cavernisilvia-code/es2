@@ -1,0 +1,6 @@
+[2026-01-14T09:56:28+00:00] error app.error text {"msg":"Unknown command: audit:whoami"}
+[2026-01-14T09:57:35+00:00] error app.error text {"msg":"Unknown command: audit:whoami"}
+[2026-01-14T10:02:27+00:00] error app.error text {"msg":"Unknown command: audit:whoami"}
+[2026-01-14T10:02:41+00:00] error app.error text {"msg":"Unknown command: audit:whoami"}
+[2026-01-14T10:04:11+00:00] error app.error text {"msg":"Unknown command: audit:whoami"}
+[2026-01-14T10:07:06+00:00] error app.error text {"msg":"Unknown argument: --action=login"}
