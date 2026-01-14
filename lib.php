@@ -47,6 +47,7 @@ function parse_args(array $argv, bool $strict): array {
     $opts = [
         'user'   => null,
         'action' => null,
+        'level' => 'info',
     ];
 
     // Scorriamo tutti gli argomenti a partire da indice 2 (dopo script e comando)
@@ -55,8 +56,8 @@ function parse_args(array $argv, bool $strict): array {
         // Riconosciamo le opzioni in base al prefisso
         if (str_starts_with($a, '--user=')) {
             $opts['user'] = substr($a, 7);
-        } elseif (str_starts_with($a, '--action=')) {
-            $opts['action'] = substr($a, 9);
+        } elseif (str_starts_with($a, '--level=')) {
+            $opts['level'] = substr($a, 9);
         } else {
             // Argomento non riconosciuto: in modalità strict blocchiamo l'esecuzione
             if ($strict) {

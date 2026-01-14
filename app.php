@@ -40,12 +40,13 @@ try {
     if ($cmd === 'audit:log') {
         $user = $opts['user'] ?? null;
         $action = $opts['action'] ?? null;
+        $level = $opts['level'] ?? 'info';
 
         if (!$user || !$action) {
             throw new InvalidArgumentException("Missing --user or --action");
         }
 
-        log_event($cfg, 'info', 'audit.event', ['user' => $user, 'action' => $action]);
+        log_event($cfg, $level, 'audit.event', ['user' => $user, 'action' => $action]);
         echo "ok\n";
         exit(0);
     }
