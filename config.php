@@ -9,7 +9,7 @@ declare(strict_types=1);
 // `return [...]` in un file incluso significa: "questa è la configurazione".
 return [
     'app_name' => 'AuditCLI',
-    'version'  => '0.1.0',
+    'version'  => '0.2.0',
 
     // logging: 'stderr' oppure 'file'
     'log_channel' => 'file',
